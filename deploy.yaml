@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-data-json
+  labels:
+    app: spring-boot-data-json
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-data-json
+  template:
+    metadata:
+      labels:
+        app: spring-boot-data-json
+    spec:
+      containers:
+      - name: spring-boot-data-json
+        image: <<<IMAGE>>>
+        ports:
+        - containerPort: 8080
